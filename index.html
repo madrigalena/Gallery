@@ -11,6 +11,43 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+        
+        <script type="text/javascript" src="javascripts/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="javascripts/jquery.jcarousel.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/skin.css" />
+
+        <script type="text/javascript">
+            
+            function mycarousel_initCallback(carousel)
+            {
+                // Disable autoscrolling if the user clicks the prev or next button.
+                carousel.buttonNext.bind('click', function() {
+                                         carousel.startAuto(0);
+                                         });
+                
+                carousel.buttonPrev.bind('click', function() {
+                                         carousel.startAuto(0);
+                                         });
+                
+                // Pause autoscrolling if the user moves with the cursor over the clip.
+                carousel.clip.hover(function() {
+                                    carousel.stopAuto();
+                                    }, function() {
+                                    carousel.startAuto();
+                                    });
+                 
+            };
+            
+            jQuery(document).ready(function() {
+                                   jQuery('#mycarousel').jcarousel({
+                                                                   auto: 3,
+                                                                   scroll: 1,
+                                                                   wrap: 'last',
+                                                                   initCallback: mycarousel_initCallback
+                                                                   });
+                                   });
+            
+            </script>        
   </head>
   <body>
     <div class="wrapper">
@@ -19,47 +56,74 @@
         <p></p>
 
         <p class="view"><a href="https://github.com/madrigalena/Gallery">View the Project on GitHub <small>madrigalena/Gallery</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/madrigalena/Gallery/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/madrigalena/Gallery/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/madrigalena/Gallery">View On <strong>GitHub</strong></a></li>
-        </ul>
       </header>
       <section>
-        <h3>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+          <h3>Transit (March, 2013)</h3>
+          <p></p>
+          
+          <div id="wrap">
+              <ul id="mycarousel" class="jcarousel-skin-tango">
+                  <li><img src="images/Transit01-3152.jpg" alt="" /></li>
+                  <li><img src="images/Transit02-3408.jpg" alt="" /></li>
+                  <li><img src="images/Transit03-0312.jpg" alt="" /></li>
+                  <li><img src="images/Transit04-0227.jpg" alt="" /></li>
+                  <li><img src="images/Transit05-0218.jpg" alt="" /></li>
+                  <li><img src="images/Transit06-186.jpg" alt="" /></li>
+                  <li><img src="images/Transit07-2.jpg" alt="" /></li>
+                  <li><img src="images/Transit08-3066.jpg" alt="" /></li>
+                  <li><img src="images/Transit09-443.jpg" alt="" /></li>
+                  <li><img src="images/Transit10-423.jpg" alt="" /></li>
+                  <li><img src="images/Transit11-3465.jpg" alt="" /></li>
+                  <li><img src="images/Transit12-3471.jpg" alt="" /></li>
+                  <li><img src="images/Transit13-3508.jpg" alt="" /></li>
+                  <li><img src="images/Transit15-3538.jpg" alt="" /></li>
+                  <li><img src="images/Transit15-3759.jpg" alt="" /></li>
+                  <li><img src="images/Transit16-4370.jpg" alt="" /></li>
+                  <li><img src="images/Transit17-4436.jpg" alt="" /></li>
+                  <li><img src="images/Transit18-5193.jpg" alt="" /></li>
+                  <li><img src="images/Transit19-5066.jpg" alt="" /></li>
+                  <li><img src="images/Transit20-5094.jpg" alt="" /></li>
+                  <li><img src="images/Transit21-4286.jpg" alt="" /></li>
+                  <li><img src="images/Transit22-4148.jpg" alt="" /></li>
+                  <li><img src="images/Transit23-4048.jpg" alt="" /></li>
+                  <li><img src="images/Transit24-3788.jpg" alt="" /></li>
+                  <li><img src="images/Transit25-3773.jpg" alt="" /></li>
+                  <li><img src="images/Transit26-3608.jpg" alt="" /></li>
+                  <li><img src="images/Transit27-3639.jpg" alt="" /></li>
+                  <li><img src="images/Transit28-3707.jpg" alt="" /></li>
+                  <li><img src="images/Transit29-3727.jpg" alt="" /></li>
+                  <li><img src="images/Transit30-3756.jpg" alt="" /></li>
+                  <li><img src="images/Transit31-3481.jpg" alt="" /></li>
+                  <li><img src="images/Transit32-3476.jpg" alt="" /></li>
+                  <li><img src="images/Transit33-3428.jpg" alt="" /></li>
+                  <li><img src="images/Transit34-0103.jpg" alt="" /></li>
+                  <li><img src="images/Transit35-133.jpg" alt="" /></li>
+                  <li><img src="images/Transit36-0001.jpg" alt="" /></li>
+                  <li><img src="images/Transit37-0017.jpg" alt="" /></li>
+                  <li><img src="images/Transit38-0056.jpg" alt="" /></li>
+                  <li><img src="images/Transit39-0067.jpg" alt="" /></li>
+                  <li><img src="images/Transit40-0078.jpg" alt="" /></li>
+                  <li><img src="images/Transit41-0004.jpg" alt="" /></li>
+                  <li><img src="images/Transit42-0150.jpg" alt="" /></li>
+                  <li><img src="images/Transit43-3386.jpg" alt="" /></li>
+                  <li><img src="images/Transit44-3414.jpg" alt="" /></li>
+                  <li><img src="images/Transit45-3683.jpg" alt="" /></li>
+                  <li><img src="images/Transit46-4437.jpg" alt="" /></li>
+                  <li><img src="images/Transit47-4618.jpg" alt="" /></li>
+                  <li><img src="images/Transit48-4759.jpg" alt="" /></li>
+                  <li><img src="images/Transit49-4795.jpg" alt="" /></li>
+                  <li><img src="images/Transit50-0080.jpg" alt="" /></li>
+              </ul>
+              
+          </div>
+          
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/madrigalena">madrigalena</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p>Copyright © 2013 Madeline Crowley</p>
       </footer>
     </div>
+      
     <script src="javascripts/scale.fix.js"></script>
     
   </body>
