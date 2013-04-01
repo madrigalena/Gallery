@@ -18,6 +18,82 @@
 
         <script type="text/javascript">
             
+            var mycarousel_itemList = [    
+                {url: "images/Transit01-3152.jpg", title: ""},
+                {url: "images/Transit02-3408.jpg", title: ""},
+                {url: "images/Transit03-0312.jpg", title: ""},
+                {url: "images/Transit04-0227.jpg", title: ""},
+                {url: "images/Transit05-0218.jpg", title: ""},
+                {url: "images/Transit06-186.jpg", title: ""},
+                {url: "images/Transit07-2.jpg", title: ""},
+                {url: "images/Transit08-3066.jpg", title: ""},
+                {url: "images/Transit09-443.jpg", title: ""},
+                {url: "images/Transit10-423.jpg", title: ""},
+                {url: "images/Transit11-3465.jpg", title: ""},
+                {url: "images/Transit12-3471.jpg", title: ""},
+                {url: "images/Transit13-3508.jpg", title: ""},
+                {url: "images/Transit15-3538.jpg", title: ""},
+                {url: "images/Transit15-3759.jpg", title: ""},
+                {url: "images/Transit16-4370.jpg", title: ""},
+                {url: "images/Transit17-4436.jpg", title: ""},
+                {url: "images/Transit18-5193.jpg", title: ""},
+                {url: "images/Transit19-5066.jpg", title: ""},
+                {url: "images/Transit20-5094.jpg", title: ""},
+                {url: "images/Transit21-4286.jpg", title: ""},
+                {url: "images/Transit22-4148.jpg", title: ""},
+                {url: "images/Transit23-4048.jpg", title: ""},
+                {url: "images/Transit24-3788.jpg", title: ""},
+                {url: "images/Transit25-3773.jpg", title: ""},
+                {url: "images/Transit26-3608.jpg", title: ""},
+                {url: "images/Transit27-3639.jpg", title: ""},
+                {url: "images/Transit28-3707.jpg", title: ""},
+                {url: "images/Transit29-3727.jpg", title: ""},
+                {url: "images/Transit30-3756.jpg", title: ""},
+                {url: "images/Transit31-3481.jpg", title: ""},
+                {url: "images/Transit32-3476.jpg", title: ""},
+                {url: "images/Transit33-3428.jpg", title: ""},
+                {url: "images/Transit34-0103.jpg", title: ""},
+                {url: "images/Transit35-133.jpg", title: ""},
+                {url: "images/Transit36-0001.jpg", title: ""},
+                {url: "images/Transit37-0017.jpg", title: ""},
+                {url: "images/Transit38-0056.jpg", title: ""},
+                {url: "images/Transit39-0067.jpg", title: ""},
+                {url: "images/Transit40-0078.jpg", title: ""},
+                {url: "images/Transit41-0004.jpg", title: ""},
+                {url: "images/Transit42-0150.jpg", title: ""},
+                {url: "images/Transit43-3386.jpg", title: ""},
+                {url: "images/Transit44-3414.jpg", title: ""},
+                {url: "images/Transit45-3683.jpg", title: ""},
+                {url: "images/Transit46-4437.jpg", title: ""},
+                {url: "images/Transit47-4618.jpg", title: ""},
+                {url: "images/Transit48-4759.jpg", title: ""},
+                {url: "images/Transit49-4795.jpg", title: ""},
+                {url: "images/Transit50-0080.jpg", title: ""},
+            ];
+            
+            function mycarousel_itemLoadCallback(carousel, state)
+            {
+                for (var i = carousel.first; i <= carousel.last; i++) {
+                    if (carousel.has(i)) {
+                        continue;
+                    }
+                    
+                    if (i > mycarousel_itemList.length) {
+                        break;
+                    }
+                    
+                    carousel.add(i, mycarousel_getItemHTML(mycarousel_itemList[i-1]));
+                }
+            };
+            
+            /**
+             * Item html creation helper.
+             */
+            function mycarousel_getItemHTML(item)
+            {
+                return '<img src="' + item.url + '" width="392" height="540" alt="' + item.url + '" />';
+            };
+            
             function mycarousel_initCallback(carousel)
             {
                 // Disable autoscrolling if the user clicks the prev or next button.
@@ -43,8 +119,9 @@
                                                                    auto: 3,
                                                                    scroll: 1,
                                                                    wrap: 'last',
-                                                                   size: 50,
-                                                                   initCallback: mycarousel_initCallback
+                                                                   size: mycarousel_itemList.length,
+                                                                   initCallback: mycarousel_initCallback,
+                                                                   itemLoadCallback: {onBeforeAnimation: mycarousel_itemLoadCallback}
                                                                    });
                                    });
             
@@ -65,56 +142,7 @@
               <ul id="mycarousel" class="jcarousel-skin-tango">
                   <li><img src="images/Transit01-3152.jpg" alt="" /></li>
                   <li><img src="images/Transit02-3408.jpg" alt="" /></li>
-                  <li><img src="images/Transit03-0312.jpg" alt="" /></li>
-                  <li><img src="images/Transit04-0227.jpg" alt="" /></li>
-                  <li><img src="images/Transit05-0218.jpg" alt="" /></li>
-                  <li><img src="images/Transit06-186.jpg" alt="" /></li>
-                  <li><img src="images/Transit07-2.jpg" alt="" /></li>
-                  <li><img src="images/Transit08-3066.jpg" alt="" /></li>
-                  <li><img src="images/Transit09-443.jpg" alt="" /></li>
-                  <li><img src="images/Transit10-423.jpg" alt="" /></li>
-                  <li><img src="images/Transit11-3465.jpg" alt="" /></li>
-                  <li><img src="images/Transit12-3471.jpg" alt="" /></li>
-                  <li><img src="images/Transit13-3508.jpg" alt="" /></li>
-                  <li><img src="images/Transit15-3538.jpg" alt="" /></li>
-                  <li><img src="images/Transit15-3759.jpg" alt="" /></li>
-                  <li><img src="images/Transit16-4370.jpg" alt="" /></li>
-                  <li><img src="images/Transit17-4436.jpg" alt="" /></li>
-                  <li><img src="images/Transit18-5193.jpg" alt="" /></li>
-                  <li><img src="images/Transit19-5066.jpg" alt="" /></li>
-                  <li><img src="images/Transit20-5094.jpg" alt="" /></li>
-                  <li><img src="images/Transit21-4286.jpg" alt="" /></li>
-                  <li><img src="images/Transit22-4148.jpg" alt="" /></li>
-                  <li><img src="images/Transit23-4048.jpg" alt="" /></li>
-                  <li><img src="images/Transit24-3788.jpg" alt="" /></li>
-                  <li><img src="images/Transit25-3773.jpg" alt="" /></li>
-                  <li><img src="images/Transit26-3608.jpg" alt="" /></li>
-                  <li><img src="images/Transit27-3639.jpg" alt="" /></li>
-                  <li><img src="images/Transit28-3707.jpg" alt="" /></li>
-                  <li><img src="images/Transit29-3727.jpg" alt="" /></li>
-                  <li><img src="images/Transit30-3756.jpg" alt="" /></li>
-                  <li><img src="images/Transit31-3481.jpg" alt="" /></li>
-                  <li><img src="images/Transit32-3476.jpg" alt="" /></li>
-                  <li><img src="images/Transit33-3428.jpg" alt="" /></li>
-                  <li><img src="images/Transit34-0103.jpg" alt="" /></li>
-                  <li><img src="images/Transit35-133.jpg" alt="" /></li>
-                  <li><img src="images/Transit36-0001.jpg" alt="" /></li>
-                  <li><img src="images/Transit37-0017.jpg" alt="" /></li>
-                  <li><img src="images/Transit38-0056.jpg" alt="" /></li>
-                  <li><img src="images/Transit39-0067.jpg" alt="" /></li>
-                  <li><img src="images/Transit40-0078.jpg" alt="" /></li>
-                  <li><img src="images/Transit41-0004.jpg" alt="" /></li>
-                  <li><img src="images/Transit42-0150.jpg" alt="" /></li>
-                  <li><img src="images/Transit43-3386.jpg" alt="" /></li>
-                  <li><img src="images/Transit44-3414.jpg" alt="" /></li>
-                  <li><img src="images/Transit45-3683.jpg" alt="" /></li>
-                  <li><img src="images/Transit46-4437.jpg" alt="" /></li>
-                  <li><img src="images/Transit47-4618.jpg" alt="" /></li>
-                  <li><img src="images/Transit48-4759.jpg" alt="" /></li>
-                  <li><img src="images/Transit49-4795.jpg" alt="" /></li>
-                  <li><img src="images/Transit50-0080.jpg" alt="" /></li>
               </ul>
-              
           </div>
           
       </section>
